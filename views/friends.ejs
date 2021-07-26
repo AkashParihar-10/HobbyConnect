@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/friends.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <title>Friends</title>
+</head>
+<body>
+    <%-include('navbar')-%>
+    <% if(pending.length>0){%>
+    <h2 style="margin:0 auto; margin-top:20vh; text-align: center;">Pending Requests</h2>
+    <ul style="list-style-type: none; margin-top: 5vh">
+        <% pending.forEach(function(req){ %>
+            <div class="listitem">
+                <li> 
+                    <h4 style="display:inline; font-size: 2vw;"> <%=req.name%></h4>
+                    <button class = "delete"><a  style="text-decoration: none; color:white;" href="/acceptreq/<%=req._id%>/3">Accept</a></button>
+                    <button class = "delete"><a  style="text-decoration: none; color:white;" href="/rejectreq/<%=req._id%>/3">Reject</a></button>
+                </li> 
+            
+        </div>
+       <% }) %>   
+    </ul>
+    <%}%>
+
+    <h2 style="margin:auto;text-align: center;  margin-top:20vh">Friends</h2>
+    <ul style="list-style-type: none; margin-top: 5vh">
+        <% friends.forEach(function(req){ %>
+            <div class="listitem">
+                <li> 
+                    <h4 style="font-size: 2vw;display:inline;"> <%=req.name%></h4>
+                    <button class = "delete"><a  style="text-decoration: none; color:white;" href="/video/<%=req._id%>">Video</a></button>
+                    <button class = "delete"><a  style="text-decoration: none; color:white;" href="/chat/<%=req._id%>">Chat</a></button>
+                </li> 
+        </div>
+       <% }) %>   
+    </ul> 
+    <%-include('footer')-%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+  </script>
+</body>
+</html>
+

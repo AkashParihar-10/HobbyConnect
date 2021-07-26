@@ -1,0 +1,10 @@
+body {
+    background: #dedede;
+}
+.page-wrap {
+    min-height: 100vh;
+}
+.btn{
+    text-decoration: none;
+    font-size: 20px;
+}

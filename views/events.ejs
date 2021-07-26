@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="/assets/events.css">
+</head>
+<body>
+   <%-include('navbar')-%> 
+   <button class="connectbtn" style="width:20vw; height:8vh;margin-left:40%"><a href="/events/new" style="color:white;text-decoration: none;">Create Your own personalized event</a></button>
+<div class="container top-mg">
+    <!-- start event block -->
+    <% for(let i=0;i<events.length;i++) {%>
+      <%if(i%2==0){%>
+
+    <div class="row align-items-center event-block no-gutters margin-40px-bottom" >
+        <div class="col-lg-7 order-2 order-lg-1">
+            <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
+              <h5 class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone"><%=events[i].title%></h5>
+                <ul class="event-time margin-10px-bottom md-margin-5px-bottom" style="padding-left: 0rem; text-align: left;">
+                    <%if(events[i].time.hr>12){ %>
+                        <li><i class="far fa-clock margin-10px-right"></i><%=(events[i].time.hr-12)%>:<%=events[i].time.min%> PM</li>
+                     <% }else {%>
+                        <li><i class="far fa-clock margin-10px-right"></i><%=(events[i].time.hr)%>:<%=events[i].time.min%> AM</li>
+                      <%}%>
+                  
+                    <li><i class="fas fa-map-marker-alt margin-5px-right"></i> Location :<%=events[i].Address%></li>
+                </ul>
+                <p>
+                <%=events[i].description%>
+                </p>
+             
+                <%if(currentUser && events[i].author.id.equals(currentUser.id)){%>
+                    <form class ="form-delete" action="/events/<%=events[i]._id%>?_method=DELETE" method="POST" style="display:inline;">
+                      <button class = "connectbtn">Delete</button>
+                  </form>
+                  <%}%>
+                  <% var found = false %>
+                  <%events[i].registered.forEach(function(user){ %>
+                   <%   if(currentUser && user._id.equals(currentUser._id) && !found){ %>
+                    <% found = true %>
+                         
+                          <form action="/events/<%=events[i]._id%>/unregistered" method="POST" style="display:inline;">
+                            <button class = "connectbtn">Unregister</button>
+                        </form>
+                        <p>Already Registered!!</p>
+                   <% }%>
+                  <% })%>
+                  <%if(!found){%>
+                  <%if(events[i].registered.length< events[i].maxCount ){ %>
+                  <form action="/events/<%=events[i]._id%>/registered" method="POST" style="display:inline;">
+                      <button class = "connectbtn">Register</button>
+                  </form>
+                  <%}else{%>
+                      <p>Event Full !!</p>
+                      <%}}%>
+                  
+                  </div>
+            </div>
+        
+
+      
+        <div class="col-lg-5 order-1 order-lg-2">
+            <div class="position-relative right-align-img">
+                <% if(events[i].image){%>
+                    <img src="<%=events[i].image%>" alt="" class="resize">
+                  <%}else {%>
+                    <img src="https://images.squarespace-cdn.com/content/v1/5aadc54285ede1bd72181a3a/1521339647830-LKHTH62ZRY5TCGVCW81P/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/shutterstock_538256848.jpg?format=1500w" alt="" class="resize">
+                      <%}%>
+              
+                <div class="events-date">
+                    <div class="font-size28"><%=events[i].date.day%></div>
+                    <div class="font-size14"><%=montharr[events[i].date.month-1]%></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    <!-- end event block -->
+     <!-- start event block -->
+     <%} else {%>
+     <div class="row align-items-center event-block no-gutters margin-40px-bottom">
+        <div class="col-lg-5 col-sm-12">
+            <div class="position-relative left-align-img">
+                <% if(events[i].image){%>
+                    <img src="<%=events[i].image%>" alt="" class="resize">
+                  <%}else {%>
+                    <img src="https://images.squarespace-cdn.com/content/v1/5aadc54285ede1bd72181a3a/1521339647830-LKHTH62ZRY5TCGVCW81P/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/shutterstock_538256848.jpg?format=1500w" alt="" class="resize">
+                      <%}%>
+                <div class="events-date1">
+                    <div class="font-size28"><%=events[i].date.day%></div>
+                    <div class="font-size14"><%=montharr[events[i].date.month-1]%></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-sm-12">
+            <div class="padding-60px-lr md-padding-50px-lr sm-padding-30px-all xs-padding-25px-all">
+                <h5 class="margin-15px-bottom md-margin-10px-bottom font-size22 md-font-size20 xs-font-size18 font-weight-500 title-mg-phone"><%=events[i].title%></h5>
+                <ul class="event-time margin-10px-bottom md-margin-5px-bottom" style="padding-left: 0rem; text-align: left;">
+                  <%if(events[i].time.hr>12){ %>
+                    <li><i class="far fa-clock margin-10px-right"></i><%=(events[i].time.hr-12)%>:<%=events[i].time.min%> PM</li>
+                 <% }else {%>
+                    <li><i class="far fa-clock margin-10px-right"></i><%=(events[i].time.hr)%>:<%=events[i].time.min%> AM</li>
+                  <%}%>
+                  <li><i class="fas fa-map-marker-alt margin-5px-right"></i> Location :<%=events[i].Address%></li>
+                </ul>
+                <p><%=events[i].description%></p>
+              
+            
+    
+       
+          <%if(currentUser && events[i].author.id.equals(currentUser.id)){%>
+              <form class ="form-delete" action="/events/<%=events[i]._id%>?_method=DELETE" method="POST" style="display:inline;">
+                <button class = "connectbtn">Delete</button>
+            </form>
+            <%}%>
+            <% var found = false %>
+            <%events[i].registered.forEach(function(user){ %>
+             <%   if(currentUser && user._id.equals(currentUser._id) && !found){ %>
+              <% found = true %>
+                    
+                    <form action="/events/<%=events[i]._id%>/unregistered" method="POST" style="display:inline;">
+                      <button class = "connectbtn">Unregister</button>
+                  </form>
+                  <p>Already Registered!!</p>
+             <% }%>
+            <% })%>
+            <%if(!found){%>
+            <%if(events[i].registered.length< events[i].maxCount ){ %>
+            <form action="/events/<%=events[i]._id%>/registered" method="POST" style="display:inline;">
+                <button class = "connectbtn">Register</button>
+            </form>
+            <%}else{%>
+                <p>Event Full !!</p>
+                <%}}%>
+                <!-- <a class="butn small margin-10px-top md-no-margin-top" href="event-details.html">Read More <i class="fas fa-long-arrow-alt-right margin-10px-left"></i></a> -->
+                <!-- Button trigger modal -->
+
+  
+            </div>
+        </div>
+    </div>
+    <!-- end event block -->
+   <%}}%>
+</div>
+      <script>
+          function addcolortonav(){
+              var nav=document.getElementById("navbarSupportedContent");
+              console.log(nav);
+              nav.classList.toggle("addcolor");
+          }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+      <%-include('footer')-%>
+</body>
+</html>

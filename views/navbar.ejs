@@ -1,0 +1,52 @@
+
+   <link rel="stylesheet" href="/assets/navbar.css">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="navbar.html">HobbyConnect</a>
+          <button onclick="addcolortonav()"  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="mylist" class="navbar-nav ml-auto ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/mainpage">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users">Connect</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/friends">Friends</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/events">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/addreminder">Reminders</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img id="userimage" src="https://devtalk.blender.org/uploads/default/original/2X/c/cbd0b1a6345a44b58dda0f6a355eb39ce4e8a56a.png" alt="userimage">
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+            <!-- <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+          </div>
+        </div>
+      </nav>
+      <script>
+        function addcolortonav() {
+            var nav = document.getElementById("navbarSupportedContent");
+            console.log(nav);
+            nav.classList.toggle("addcolor");
+        }
+    </script>

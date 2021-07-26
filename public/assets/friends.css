@@ -1,0 +1,31 @@
+.listitem{
+    margin: auto;
+    height: 8vh;
+   width: 80%;
+   background-color: #f6909d;
+   border-radius: 8px 8px;
+   text-align: center;
+   padding-top: 1.2vh;
+   color: white;
+   margin-bottom:5px;
+}
+
+.delete{
+  height: 6vh; 
+  width: 8vw;
+   border-radius: 15px 15px;
+   margin-left: 2vw;
+   background-image: linear-gradient(to right,#F77737, #E1306C );
+   color: white;
+   font-weight: bold;
+   font-size: 1.5vw;
+}
+
+.delete:hover{
+   background-color: white;
+   background-image: linear-gradient(to right, #E1306C, #F77737);
+}
+
+li{
+    font-weight: bolder;
+}

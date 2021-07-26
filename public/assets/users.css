@@ -1,0 +1,74 @@
+.formdiv{
+    text-align: center;
+    margin-top: 15vh;
+}
+
+.delete{
+    height: 6vh; 
+    width: 8vw;
+     border-radius: 15px 15px;
+     margin-left: 2vw;
+     background-image: linear-gradient(to right,#F77737, #E1306C );
+     color: white;
+     font-weight: bold;
+     font-size: 1.5vw;
+     border: none;
+}
+
+
+.delete:hover{
+     background-color: white;
+     background-image: linear-gradient(to right, #E1306C, #F77737);
+}
+
+#peopleheading{
+    margin: auto;
+    margin-top: 50px;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 4rem;
+    color:black;
+}
+
+#peopleheading2{
+    margin: auto;
+    margin-top: 10px;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+}
+
+
+
+#distances1{
+    position: relative;
+    bottom: 2vh;
+    height: 40px;
+    width: 4vw;
+}
+
+.listitem{
+    margin: auto;
+    height: 12vh;
+   width: 80%;
+   border-radius: 8px 8px;
+   background-color:#f6909d;
+   text-align: center;
+   padding-top: 1.5vh;
+   color: white;
+   margin-bottom: 5px;
+}
+
+.userimage{
+    height: 40px;
+    width: 4vw;
+    border-radius: 100%;
+    margin-right: 1.5vw;
+    position: relative;
+    top: 0.7vw;
+}
+
+#requestsent:hover{
+    color: pink;
+}

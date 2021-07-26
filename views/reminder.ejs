@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+   
+    <link rel="stylesheet" href="/assets/reminder.css">
+</head>
+
+<body>
+    <%-include('navbar')-%>
+    <div class="reminderform">
+        <h1 class="reminderheading" style="font-family: 'Cookie'; font-weight: bolder;">Add A Reminder!</h1>
+        <div class="container container1">
+            <div class="row">
+                <div class="col-3" style="background-image: url('https://images.unsplash.com/photo-1550534791-2677533605ab?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8&w=1000&q=80'); background-size: cover; 
+              background-position: center;">
+                </div>
+                <div id="formbody" class="col-6">
+                    <div class="container container1" style="margin-left: 0px; margin-top:0px; padding: 0px; background-color: #f6909d;">
+                        <h1 style="font-size: 1.7rem; color: white; padding: 7px;">We are more frequently require to be reminded than informed. </h1>
+                        <form action="/addreminder" method="POST">
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="fname">Event Title</label>
+                            </div>
+                            <div class="col-75">
+                              <input type="text" id="title" name="Title" placeholder="Title">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="lname">Description</label>
+                            </div>
+                            <div class="col-75">
+                              <input type="text" id="description" name="Description" placeholder="Description">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="country">Day</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="date" id="date" name="Date">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="country">Time</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="time" id="time" name="Time">
+                            </div>
+                          </div>
+                
+                          <div class="row">
+                            <input type="submit" value="Submit">
+                          </div>
+                        </form>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% if(result.length>0){%>
+    <div class="reminderform" style="margin-top: 17vh">
+        <h1 class="reminderheading" style="font-family: 'Cookie'; font-weight: bolder;">Your Reminders</h1>
+
+    </div>
+    <%}%>
+    <ul style="list-style-type: none; margin-top: 10vh">
+    <% for(let i=0;i<result.length;i++) {%>
+        
+           
+                    <div class="listitem">
+                        <li> 
+                            <%if(result[i].time.hr>12){ %>
+                                <h2 style="display: inline; font-size: 2vw;">Reminder <%=i+1%> on <%=result[i].date.day%>/ <%=result[i].date.month%>/ <%=result[i].date.year%> at  <%=result[i].time.hr-12%>: <%=result[i].time.min%> PM</h2>
+                             <% }else {%>
+                                <h2 style="display: inline; font-size: 2vw;">Reminder <%=i+1%> on <%=result[i].date.day%>/ <%=result[i].date.month%>/ <%=result[i].date.year%> at  <%=result[i].time.hr%>: <%=result[i].time.min%> AM</h2>
+                              <%}%>
+                            
+                            <button class="delete"><a style="text-decoration: none; color:white;" href="/delete/<%=result[i]._id%>">Delete</a> </button>
+                        </li> 
+                    </div>
+               
+          
+        <% } %>
+    </ul>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+      </script>
+        <%-include('footer')-%>
+        
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign up Page</title>
+
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="/assets/signup.css">
+</head>
+
+<body onload="getLocation()">
+	<div class="container">
+		<div class="d-flex justify-content-center h-70">
+			<div class="card" id="sign-up">
+				<div class="card-header">
+					<h3>Sign Up</h3>
+				</div>
+				<div class="card-body">
+					<form target="_parent">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" class="form-control " placeholder="Name" name ="name" id="name" required>
+
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<input type="email" class="form-control" placeholder="Email" name="email" id="email" required>
+
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Age" name="age" id="age" required>
+
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Phone-no"name="mobile" id="mobile" required>
+
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Username"name ="username" id="username" required>
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control" placeholder="Password" name ="password" id="password"
+								required>
+						</div>
+
+
+						<div class="form-group">
+							<button onclick="fetchdata()" class="btn login_btn">Register</button>
+						</div>
+
+
+
+
+					</form>
+
+					<h4 id="noaccount">Already have an account?</h4>
+					<h4 id="login"><a href="/login">Login</a></h4>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+	<script src="/assets/locationlogic.js"></script>
+</body>
+
+</html>

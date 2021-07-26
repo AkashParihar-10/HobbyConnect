@@ -1,0 +1,125 @@
+.reminderform{
+    margin-top: 25vh;
+    text-align: center;
+}
+
+.container1{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10vh;
+    height: 50vh;
+}
+
+.col-3{
+    height: 50vh;
+}
+
+#formbody{
+    padding-left: 0px;
+    height: 50vh;
+}
+form{
+    height: 50vh;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+  
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+      margin: auto;
+      margin-top: 4vh;
+      height: 7vh;
+width: 15vw;
+background-image: linear-gradient(to right,#F77737, #E1306C );
+color:white;
+border-radius: 15px 15px;
+font-weight: bold;
+border: none;
+font-size: 1.5vw;
+transition: 2s;
+  }
+  
+  input[type=submit]:hover {
+      transition: 2s;
+background-image: linear-gradient(to right, #E1306C, #F77737);
+color: white;
+  }
+  
+  
+  .col-25 {
+      color: white;
+      font-weight: bold;
+      display: inline;
+    float: left;
+    width: 20%;
+    height: 5%;
+    margin: auto;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+      text-align: left;
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row{
+      margin:auto;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  .listitem{
+    margin: auto;
+    height: 8vh;
+   width: 80%;
+   background-color: #f6909d;
+   border-radius: 8px 8px;
+   text-align: center;
+   padding-top: 1.2vh;
+   color: white;
+   margin-bottom:5px;
+}
+
+.delete{
+  height: 6vh; 
+  width: 8vw;
+   border-radius: 15px 15px;
+   margin-left: 2vw;
+   background-image: linear-gradient(to right,#F77737, #E1306C );
+   color: white;
+   font-weight: bold;
+   font-size: 1.5vw;
+   border:none;
+}
+
+.delete:hover{
+   background-color: white;
+   background-image: linear-gradient(to right, #E1306C, #F77737);
+}

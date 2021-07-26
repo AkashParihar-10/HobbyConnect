@@ -1,0 +1,63 @@
+.navbar{
+    background-image: linear-gradient(to right, #E1306C, #F77737);
+    height: 15vh;
+}
+
+
+.navbar-toggler{
+    position: absolute;
+    right:5vw;
+}
+.navbar-collapse{
+    padding-left: 62vw;
+}
+
+
+
+.navbar-brand{
+    position: absolute;
+    top: 1.5vh;
+    z-index: 2;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 800;
+    overflow: hidden;
+    background: linear-gradient(to right, midnightblue, midnightblue 50%, white 50%);
+    background-clip: text ;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+    transition: background-position 275ms ease;
+}
+
+
+.navbar-brand:hover{
+
+  background-position: 0 100%;
+   
+}
+
+.nav-link{
+   color: white!important;;
+}
+
+.nav-link:hover{
+    background: -webkit-linear-gradient(left,black, grey);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active{
+    font-weight: bolder;
+}
+
+.addcolor{
+    background-image: linear-gradient(to right, #E1306C, #F77737)!important;
+}
+
+#userimage{
+    border-radius: 100%;
+    height: 6vh;
+    width: 5vw;
+}

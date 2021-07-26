@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Create a new Event</title>
+
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="/assets/newevent.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-70">
+			<div class="card" id="sign-up">
+				<div class="card-header">
+					<h3>New Event</h3>
+				</div>
+				<div class="card-body">
+					<form target="_parent" action="/events" method="post">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-heading"></i></span>
+							</div>
+							<input type="text" class="form-control "  name ="event[title]" placeholder="title" required>
+
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-images"></i></span>
+							</div>
+							<input type="email" class="form-control" name="event[image]" placeholder="Image-url">
+
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-file-word"></i></span>
+							</div>
+							<input type="text" class="form-control" name="event[description]" placeholder="Description" required>
+
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
+							</div>
+							<input type="text" class="form-control" name="event[Address]" placeholder="Location" required>
+
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+							</div>
+							<input type="date" class="form-control" name="date" required>
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-clock"></i></span>
+							</div>
+							<input type="time" class="form-control" name="time"
+								required>
+                        </div>
+                        <div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-male"></i></span>
+							</div>
+							<input type="number" class="form-control" name="event[maxCount]" placeholder="Maximum people"
+								required>
+						</div>
+
+
+
+						<div class="form-group">
+							<button class="btn login_btn">Create</button>
+						</div>
+
+
+
+
+					</form>
+
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

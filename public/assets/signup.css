@@ -1,0 +1,147 @@
+
+.leave {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+html,
+body {
+    background-image: url('https://images.wallpaperscraft.com/image/crayons_colorful_paint_159883_3840x2400.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    text-align: center;
+}
+
+
+#sign-up {
+    height: 580px;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 320px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #E1306C;
+}
+
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+
+.card-body {
+    height: 350px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #E1306C;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember {
+    color: white;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.formbutton {
+    margin-top: 40px;
+}
+
+.login_btn {
+    display: block;
+    margin: auto;
+    color: #E1306C;
+    background-color: white;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.login_btn:hover {
+    color: white;
+    background-image: linear-gradient(to right, #E1306C, #F77737);
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.signup {
+    display: block;
+}
+
+#noaccount {
+    color: white;
+}
+
+a:link {
+    color: #E1306C;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F77737;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.login_btn{
+    padding-bottom: 10px;
+}
